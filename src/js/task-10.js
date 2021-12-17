@@ -40,6 +40,7 @@ refs.btnCreate.addEventListener('click', () => {
 
 refs.btnDestroy.addEventListener('click', () => {
   refs.boxes.innerHTML = '';
+  refs.inputQuantity.value = '';
 });
 
 function createBoxes(amount) {
