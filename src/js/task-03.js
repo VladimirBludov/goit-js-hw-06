@@ -26,6 +26,8 @@ const images = [
   },
 ];
 
+const galleryContainerEl = document.querySelector('.gallery');
+
 const makeGalleryItem = ({ url, alt }) => {
   return `
     <li class="gallery__item">
@@ -36,6 +38,4 @@ const makeGalleryItem = ({ url, alt }) => {
 
 const galleryItems = images.map(image => makeGalleryItem(image));
 
-document
-  .querySelector('.gallery')
-  .insertAdjacentHTML('afterbegin', galleryItems.join(''));
+galleryContainerEl.insertAdjacentHTML('afterbegin', galleryItems.join(''));

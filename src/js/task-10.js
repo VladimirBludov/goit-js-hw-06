@@ -33,19 +33,22 @@ const refs = {
   boxes: document.querySelector('#boxes'),
 };
 
+let upSize = 0;
+
 refs.btnCreate.addEventListener('click', () => {
   const amount = Number(refs.inputQuantity.value);
   refs.boxes.append(...createBoxes(amount));
+  refs.inputQuantity.value = '';
 });
 
 refs.btnDestroy.addEventListener('click', () => {
   refs.boxes.innerHTML = '';
   refs.inputQuantity.value = '';
+  upSize = 0;
 });
 
 function createBoxes(amount) {
   const boxesArr = [];
-  let upSize = 0;
 
   for (let i = 0; i < amount; i += 1) {
     const box = document.createElement('div');
